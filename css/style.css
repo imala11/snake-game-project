@@ -1,0 +1,22 @@
+#box {
+    background-color: coral;
+    border-style: solid;
+    position: absolute;
+    left: 100px;
+    top: 150px;
+    width:40px;
+    height:40px;
+}
+#box2 {
+    background-color: blueviolet;
+    border-style: solid;
+    position: absolute;
+    left: 300px;
+    top: 300px;
+    width:40px;
+    height:40px;
+}
+#modelZone {
+    border: 2px solid red;
+    height: 910px;
+}
