@@ -11,22 +11,16 @@ var r = 10;
 var canvas = document.getElementById("modelZone"); //get the canvas dom object
 var ctx = canvas.getContext("2d"); //get the context
 
-var redraw = function(){
-  ctx.clearRect(0, 0, canvas.width, canvas.height); //clear canvas
-  ctx.beginPath();  //draw the object c
-  ctx.closePath();
-  ctx.fill();
-    
-  requestAnimationFrame(redraw);
-};
 
 function move(){
-var w = Math.random()
-var h = Math.random() // this returns a float between 0.0 and 1.0
-a = w * canvas.width;
-b = h * canvas.height;
+    var w = Math.random()
+    var h = Math.random() // this returns a float between 0.0 and 1.0
+    a = w * canvas.width;
+    b = h * canvas.height;
+    document.getElementById('box2').style.left = a +"px";
+    document.getElementById("box2").style.top = b + "px";
 };
-redraw(); 
+ 
 
 document.getElementById("box2").style.left = a + "px"
 document.getElementById("box2").style.top = b + "px"
@@ -39,6 +33,16 @@ var y = 50;
 var dx = 20;
 var dy = 20;
 
+function framex() {
+    if (x == 1370) {
+      clearInterval(id);
+      alert("you lost");
+    } else {
+    x++;
+      document.getElementById('box').style.left = x + 'px'; 
+      var id = setInterval(framex, 100);
+    };
+};
 
     document.addEventListener ('keydown', function(event) {
         console.log(event.keyCode);
@@ -46,6 +50,7 @@ var dy = 20;
 
         if (event.keyCode == 39) {
             x = x + dx;
+            framex();
         };
         if (event.keyCode == 37) {
             x = x - dx;
@@ -67,9 +72,8 @@ var dy = 20;
          hy.posy < (wx.posb + wx.height)+20 &&
          (hy.height + hy.posy)+20 > wx.posb) {
           // collision detected!
-          console.log("collision")
-          redraw();
-          
+          console.log("collision");
+          move();
         };
         if (x < 10) {
             document.getElementById("box").style.visibility= "hidden";
