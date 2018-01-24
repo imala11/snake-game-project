@@ -1,4 +1,5 @@
-
+var score = 0;
+document.getElementById()
 document.getElementById('box2').style.left = "50px";
 document.getElementById("box2").style.top = "50px";
 
@@ -19,6 +20,18 @@ function move(){
     b = h * canvas.height;
     document.getElementById('box2').style.left = a +"px";
     document.getElementById("box2").style.top = b + "px";
+    if (a > 1370){
+        move();
+    };
+    if (a < 10){
+        move();
+    };
+    if (b < 10){
+        move();
+    };
+    if (b > 870){
+        move();
+    };
 };
  
 
@@ -50,7 +63,6 @@ function framex() {
 
         if (event.keyCode == 39) {
             x = x + dx;
-            framex();
         };
         if (event.keyCode == 37) {
             x = x - dx;
@@ -74,6 +86,7 @@ function framex() {
           // collision detected!
           console.log("collision");
           move();
+          document.getElementsByTagName("h2")= document.write
         };
         if (x < 10) {
             document.getElementById("box").style.visibility= "hidden";
