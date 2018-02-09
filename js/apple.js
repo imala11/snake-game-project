@@ -1,5 +1,5 @@
 var score = 0;
-document.getElementById()
+
 document.getElementById('box2').style.left = "50px";
 document.getElementById("box2").style.top = "50px";
 
@@ -46,7 +46,7 @@ var y = 50;
 var dx = 20;
 var dy = 20;
 
-function framex() {
+/*function framex() {
     if (x == 1370) {
       clearInterval(id);
       alert("you lost");
@@ -55,7 +55,7 @@ function framex() {
       document.getElementById('box').style.left = x + 'px'; 
       var id = setInterval(framex, 100);
     };
-};
+};*/
 
     document.addEventListener ('keydown', function(event) {
         console.log(event.keyCode);
@@ -86,7 +86,7 @@ function framex() {
           // collision detected!
           console.log("collision");
           move();
-          document.getElementsByTagName("h2")= document.write
+          
         };
         if (x < 10) {
             document.getElementById("box").style.visibility= "hidden";
